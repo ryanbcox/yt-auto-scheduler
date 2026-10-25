@@ -1,40 +1,20 @@
 {
-   "channels": [
-      {
-         "channelName": "Channel 1",
-         "channelID": "secret_channel_id1",
-         "secretPath": "secrets-c1.json",
-         "tokenPath": "token-c1.json",
-         "wards": [
-            {
-               "broadcastTitle": "First Broadcast",
-               "startTime": "09:00:00",
-               "streamID": "firstBroadcastKey"
-            },
-            {
-               "broadcastTitle": "Second Broadcast",
-               "startTime": "12:00:00",
-               "streamID": "secondBroadcastKey"
-            }
-         ]
-      },
-      {
-         "channelName": "Channel 2",
-         "channelID": "secret_channel_id2",
-         "secretPath": "secrets-c2.json",
-         "tokenPath": "token-c2.json",
-         "wards": [
-            {
-               "broadcastTitle": "First Broadcast",
-               "startTime": "09:00:00",
-               "streamID": "firstBroadcastKey"
-            },
-            {
-               "broadcastTitle": "Second Broadcast",
-               "startTime": "12:00:00",
-               "streamID": "secondBroadcastKey"
-            }
-         ]
-      }
-   ]
+  "timezone": "America/Denver",
+  "channels": [
+    {
+      "channelName": "Hobble Creek 7th Ward",
+      "secretPath": "/etc/yt-scheduler/secrets-hc7.json",
+      "tokenPath": "/var/lib/yt-scheduler/token-hc7.json",
+      "wards": [
+        {
+          "wardName": "Hobble Creek 7th Ward",
+          "eventName": "Sacrament Meeting",
+          "description": "",
+          "startTime": "09:00:00",
+          "streamID": "FILL_IN_FROM_list-streams",
+          "playlistID": "PLBQacIHDjC2k"
+        }
+      ]
+    }
+  ]
 }
