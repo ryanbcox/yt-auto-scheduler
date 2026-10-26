@@ -137,7 +137,7 @@ def authenticate_youtube(channel: dict, *, interactive: bool = False):
         if not secret_path.exists():
             raise FileNotFoundError(f"OAuth client file not found: {secret_path}")
         flow = InstalledAppFlow.from_client_secrets_file(str(secret_path), SCOPES)
-        credentials = flow.run_local_server(port=8080)
+        credentials = flow.run_local_server(port=8080, open_browser=False)
         token_path.parent.mkdir(parents=True, exist_ok=True)
         token_path.write_text(credentials.to_json(), encoding="utf-8")
         token_path.chmod(0o600)
@@ -181,7 +181,7 @@ def find_upcoming_broadcast(youtube, title: str, scheduled_start: datetime):
         response = youtube.liveBroadcasts().list(
             part="id,snippet,status,contentDetails",
             broadcastStatus="upcoming",
-            mine=True,
+            broadcastType="event",
             maxResults=50,
             pageToken=page_token,
         ).execute()
