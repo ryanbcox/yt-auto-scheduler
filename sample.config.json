@@ -1,5 +1,7 @@
 {
   "timezone": "America/Denver",
+  "relayTargetEnvPath": "/var/lib/yt-scheduler/selected-stream.env",
+  "cameraHealthUrl": "http://FILL_IN_CAMERA_IP/",
   "channels": [
     {
       "channelName": "Hobble Creek 7th Ward",

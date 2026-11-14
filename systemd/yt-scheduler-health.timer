@@ -1,0 +1,11 @@
+[Unit]
+Description=Check broadcast readiness Thursday through Sunday at 7 AM Mountain time
+
+[Timer]
+OnCalendar=Thu,Fri,Sat,Sun *-*-* 07:00:00 America/Denver
+Persistent=true
+AccuracySec=1min
+Unit=yt-scheduler-health.service
+
+[Install]
+WantedBy=timers.target

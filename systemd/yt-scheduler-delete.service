@@ -1,0 +1,19 @@
+[Unit]
+Description=Delete previous Sunday's Sacrament Meeting recording
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=yt-scheduler
+Group=yt-scheduler
+WorkingDirectory=/opt/yt-scheduler
+StateDirectory=yt-scheduler
+Environment=PYTHONDONTWRITEBYTECODE=1
+EnvironmentFile=/etc/yt-scheduler/notifications.env
+ExecStart=/opt/yt-scheduler/venv/bin/python /opt/yt-scheduler/schedule.py delete-previous-sacrament --config /etc/yt-scheduler/config.json
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/yt-scheduler

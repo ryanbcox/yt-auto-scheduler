@@ -1,0 +1,11 @@
+[Unit]
+Description=Delete previous Sunday's Sacrament Meeting recording every Monday morning
+
+[Timer]
+OnCalendar=Mon *-*-* 09:00:00 America/Denver
+Persistent=true
+AccuracySec=1min
+Unit=yt-scheduler-delete.service
+
+[Install]
+WantedBy=timers.target
